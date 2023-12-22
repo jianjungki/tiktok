@@ -8,7 +8,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ipfans/tiktok"
+	"github.com/jianjungki/tiktok"
 )
 
 const (

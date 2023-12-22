@@ -1,9 +1,9 @@
 # tiktok
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/ipfans/tiktok-sdk.svg)](https://pkg.go.dev/github.com/ipfans/tiktok-sdk)
-[![Go Report Card](https://goreportcard.com/badge/github.com/ipfans/tiktok-sdk)](https://goreportcard.com/report/github.com/ipfans/tiktok-sdk)
-[![build](https://github.com/ipfans/tiktok/actions/workflows/ci.yml/badge.svg)](https://github.com/ipfans/tiktok/actions/workflows/ci.yml)
-[![Coverage Status](https://coveralls.io/repos/github/ipfans/tiktok/badge.svg?branch=master)](https://coveralls.io/github/ipfans/tiktok?branch=master)
+[![Go Reference](https://pkg.go.dev/badge/github.com/jianjungki/tiktok-sdk.svg)](https://pkg.go.dev/github.com/jianjungki/tiktok-sdk)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jianjungki/tiktok-sdk)](https://goreportcard.com/report/github.com/jianjungki/tiktok-sdk)
+[![build](https://github.com/jianjungki/tiktok/actions/workflows/ci.yml/badge.svg)](https://github.com/jianjungki/tiktok/actions/workflows/ci.yml)
+[![Coverage Status](https://coveralls.io/repos/github/jianjungki/tiktok/badge.svg?branch=master)](https://coveralls.io/github/jianjungki/tiktok?branch=master)
 
 Go SDK for Tiktok Shop Open Platform.
 

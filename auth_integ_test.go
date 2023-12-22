@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ipfans/tiktok"
+	"github.com/jianjungki/tiktok"
 	"github.com/stretchr/testify/require"
 )
 

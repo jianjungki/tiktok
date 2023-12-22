@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/ipfans/tiktok"
+	"github.com/jianjungki/tiktok"
 	"github.com/stretchr/testify/require"
 )
 

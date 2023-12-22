@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/ipfans/tiktok"
+	"github.com/jianjungki/tiktok"
 	"github.com/jarcoal/httpmock"
 	"github.com/stretchr/testify/require"
 )

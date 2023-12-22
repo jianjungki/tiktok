@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ipfans/tiktok"
 	"github.com/jarcoal/httpmock"
+	"github.com/jianjungki/tiktok"
 	"github.com/stretchr/testify/require"
 )
 
