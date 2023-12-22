@@ -1,4 +1,4 @@
-module github.com/ipfans/tiktok
+module github.com/jianjungki/tiktok
 
 go 1.17
 
