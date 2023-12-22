@@ -26,7 +26,7 @@ func (c *Client) GetAccessToken(ctx context.Context, code string) (resp AccessTo
 	r := c.prepareBody(req)
 	err = c.request(
 		ctx, http.MethodPost, AuthBaseURL,
-		"/api/token/getAccessToken",
+		"/api/v2/token/get",
 		nil, r, &resp)
 	return
 }
@@ -42,7 +42,7 @@ func (c *Client) RefreshToken(ctx context.Context, rk string) (resp AccessTokenR
 	r := c.prepareBody(req)
 	err = c.request(
 		ctx, http.MethodPost, AuthBaseURL,
-		"/api/token/refreshToken",
+		"/api/v2/token/refresh",
 		nil, r, &resp)
 	return
 }
