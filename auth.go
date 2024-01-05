@@ -2,8 +2,12 @@ package tiktok
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
+
+	"github.com/goccy/go-json"
 )
 
 // GenerateAuthURL generate auth url for user to login.
@@ -36,6 +40,7 @@ func (c *Client) GenerateAuthURL(state string) string {
 // Doc: https://bytedance.feishu.cn/docs/doccnROmkE6WI9zFeJuT3DQ3YOg#qYtWHF
 func (c *Client) GetAccessToken(ctx context.Context, code string) (resp AccessTokenResponse, err error) {
 	grantType := "authorized_code"
+	respCommon := Response{}
 	err = c.request(
 		ctx, http.MethodGet, AuthBaseURL,
 		fmt.Sprintf("/api/v2/token/get?app_key=%s&app_secret=%s&auth_code=%s&grant_type=%s",
@@ -43,7 +48,11 @@ func (c *Client) GetAccessToken(ctx context.Context, code string) (resp AccessTo
 			c.appSecret,
 			code,
 			grantType),
-		nil, nil, &resp)
+		nil, nil, &respCommon)
+	err = json.Unmarshal(respCommon.Data, &resp)
+	if err != nil {
+		log.Fatalln("unmarshal response error: %v", err.Error())
+	}
 	return
 }
 
