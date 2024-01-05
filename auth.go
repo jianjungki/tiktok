@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"net/http"
+	"net/url"
 )
 
 // GenerateAuthURL generate auth url for user to login.
@@ -35,15 +36,15 @@ func (c *Client) GenerateAuthURL(state string) string {
 // GetAccessToken get access token from tiktok server.
 // Doc: https://bytedance.feishu.cn/docs/doccnROmkE6WI9zFeJuT3DQ3YOg#qYtWHF
 func (c *Client) GetAccessToken(ctx context.Context, code string) (resp AccessTokenResponse, err error) {
-	grantType := "authorized_code"
 	err = c.request(
 		ctx, http.MethodGet, AuthBaseURL,
-		fmt.Sprintf("/api/v2/token/get?app_key=%s&app_secret=%s&auth_code=%s&grant_type=%s",
-			c.appKey,
-			c.appSecret,
-			code,
-			grantType),
-		nil, nil, &resp)
+		"/api/v2/token/get",
+		url.Values{
+			"app_key":    []string{c.appKey},
+			"app_secret": []string{c.appSecret},
+			"auth_code":  []string{code},
+			"grant_type": []string{"authorized_code"},
+		}, nil, &resp)
 	return
 }
 
@@ -57,7 +58,7 @@ func (c *Client) RefreshToken(ctx context.Context, rk string) (resp AccessTokenR
 	req.GrantType = "refresh_token"
 	r := c.prepareBody(req)
 	err = c.request(
-		ctx, http.MethodGet, AuthBaseURL,
+		ctx, http.MethodPost, AuthBaseURL,
 		"/api/v2/token/refresh",
 		nil, r, &resp)
 	return
